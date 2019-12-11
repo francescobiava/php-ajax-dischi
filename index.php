@@ -17,6 +17,20 @@
 
 </head>
 <body>
+
+<div class="container">
+</div>
   
+<!-- Handlebars Template -->
+<script id="cd-template" type="text/x-handlebars-template">
+  <div class="cd">
+    <img src="{{poster}}" alt="">
+    <h3>{{title}}</h3>
+    <span class="author">{{author}}</span>
+    <span class="year">{{year}}</span>
+    <span class="genre">{{genre}}</span>
+  </div>
+</script>
+
 </body>
 </html>
