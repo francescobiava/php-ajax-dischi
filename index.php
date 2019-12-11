@@ -28,7 +28,6 @@
     <h3>{{title}}</h3>
     <span class="author">{{author}}</span>
     <span class="year">{{year}}</span>
-    <span class="genre">{{genre}}</span>
   </div>
 </script>
 
