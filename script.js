@@ -1,11 +1,12 @@
 $(document).ready(function () {
   
-  getData();
+  getCds();
+  $('#search-button').on('click', searchButton);
 
 });
 
 // FUNCTIONS
-function getData () {
+function getCds () {
   $.ajax({
     url: 'getAllCds.php',
     method: 'GET',
@@ -18,13 +19,36 @@ function getData () {
   });
 }
 
+function searchButton() {
+  var input = $('#search-input').val();
+  getCdsByArtist(input);
+}
+
+function getCdsByArtist (artist) {
+  $.ajax({
+    url: 'getCdsByArtist.php',
+    data: {
+      artist: artist
+    },
+    method: 'GET',
+    success: function (data) {
+      printCds(data);
+    },
+    error: function (error) {
+      alert('error ', error);
+    }
+  });
+}
+
 function printCds(data) {
 
+  var target = $('.container');
+  target.html('');
   var source = $('#cd-template').html();
   var template = Handlebars.compile(source);
 
   data.forEach(cd => {
     var html = template(cd);
-    $('.container').append(html);
+    target.append(html);
   });
 }

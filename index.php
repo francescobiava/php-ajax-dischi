@@ -18,6 +18,13 @@
 </head>
 <body>
 
+<div class="search">
+  <input id="search-input" type="text">
+  <button id="search-button">Search</button>
+</div>
+
+
+
 <div class="container">
 </div>
   
